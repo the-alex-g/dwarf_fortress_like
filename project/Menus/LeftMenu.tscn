@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Menus/LeftMenu.gd" type="Script" id=1]
+
+[node name="LeftMenu" type="TabContainer"]
+anchor_bottom = 1.0
+margin_right = 180.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Build" type="Tabs" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -139.0
+margin_bottom = -544.0
+
+[node name="Tree" type="Tree" parent="Build"]
+margin_right = 175.0
+margin_bottom = 565.0
+columns = 2
+hide_root = true
+select_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resources" type="Tabs" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="Tree" type="Tree" parent="Resources"]
+margin_right = 175.0
+margin_bottom = 565.0
+columns = 2
+hide_root = true
+select_mode = 1
+
+[connection signal="item_selected" from="Build/Tree" to="." method="_on_build_tree_item_selected"]
